@@ -68,6 +68,7 @@ public class DynamicArray<T> {
 		System.out.println();
 	}
 
+	//main method
 	public static void main(String[] args) {
 		DynamicArray<String> list = new DynamicArray<String>();
 		list.add("TN");
