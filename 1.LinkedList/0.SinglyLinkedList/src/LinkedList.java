@@ -12,7 +12,7 @@ public class LinkedList<E> implements List<E> {
 	@Override
 	public void add(E element) {
 		//the add operation is O(1) because we are adding in the begging of the linkedlist
-		if(head == null) {
+		if(isEmpty()) {
 			head = new Node<E>(element,null);
 		}else {
 			head = new Node<E>(element,head);
@@ -25,7 +25,7 @@ public class LinkedList<E> implements List<E> {
 	@Override
 	public E remove() {
 		//the remove operation is O(1) because we are removing in the begging of the linkedlist
-		if(head == null)
+		if(isEmpty())
 			return null;
 		Node<E> element = head;
 		head = head.next;
@@ -49,7 +49,7 @@ public class LinkedList<E> implements List<E> {
 	
 	public void print() {
 		//the print operation is O(n) because we are parsing the hole linkedlist
-		if(head==null) {
+		if(isEmpty()) {
 			System.out.println("[]");
 			return ;
 		}
@@ -83,6 +83,7 @@ public class LinkedList<E> implements List<E> {
 		nations.add("GER");
 		nations.add("RUS");
 		nations.add("IN");
+		System.out.printf("nations.size(): %s%n",nations.size());
 		nations.print();
 		String elementRemoved = nations.remove();
 		System.out.printf("nations.remove(): %s%n",elementRemoved);
@@ -97,6 +98,7 @@ public class LinkedList<E> implements List<E> {
 		elementRemoved = nations.remove();
 		System.out.printf("nations.remove(): %s%n",elementRemoved);
 		nations.print();
+		System.out.printf("nations.size(): %s%n",nations.size());
 		elementRemoved = nations.remove();
 		System.out.printf("nations.remove(): %s%n",elementRemoved);
 		nations.print();
@@ -110,6 +112,7 @@ public class LinkedList<E> implements List<E> {
 
 //output
 /*
+nations.size(): 5
 [IN	RUS	GER	GB	TN]
 nations.remove(): IN
 [RUS	GER	GB	TN]
@@ -120,6 +123,7 @@ nations.remove(): GER
 nations.isEmpty() : false
 nations.remove(): GB
 [TN]
+nations.size(): 1
 nations.remove(): TN
 []
 nations.isEmpty() : true
