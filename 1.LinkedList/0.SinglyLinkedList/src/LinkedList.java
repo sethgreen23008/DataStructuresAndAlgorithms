@@ -30,6 +30,7 @@ public class LinkedList<E> implements List<E> {
 		Node<E> element = head;
 		head = head.next;
 		element.next=null; 
+		size--;
 		return element.data;
 	}
 
@@ -92,12 +93,14 @@ public class LinkedList<E> implements List<E> {
 		elementRemoved = nations.remove();
 		System.out.printf("nations.remove(): %s%n",elementRemoved);
 		nations.print();
+		System.out.printf("nations.isEmpty() : %s%n",nations.isEmpty());
 		elementRemoved = nations.remove();
 		System.out.printf("nations.remove(): %s%n",elementRemoved);
 		nations.print();
 		elementRemoved = nations.remove();
 		System.out.printf("nations.remove(): %s%n",elementRemoved);
 		nations.print();
+		System.out.printf("nations.isEmpty() : %s%n",nations.isEmpty());
 	}
 	
 	
@@ -114,8 +117,10 @@ nations.remove(): RUS
 [GER	GB	TN]
 nations.remove(): GER
 [GB	TN]
+nations.isEmpty() : false
 nations.remove(): GB
 [TN]
 nations.remove(): TN
 []
+nations.isEmpty() : true
 */
